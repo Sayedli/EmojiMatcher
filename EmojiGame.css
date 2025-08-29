@@ -1,0 +1,96 @@
+/* TCSS 460 - Assignment 2 
+   Author: Hassan Ali
+   Emoji Matching Game */
+
+/* Apply global styles to the body */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #00f, #f0f); /* Blue to pink gradient */
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Style the main container */
+.container {
+    text-align: center;
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid layout for the game board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* Four columns of 100px each */
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Style individual tiles */
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: #3e3e3e;
+    border: 2px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    color: #3e3e3e; /* Hide text by default */
+}
+
+/* Style for flipped or matched tiles */
+.tile.flipped, .tile.matched {
+    background-color: #00c853; /* Green background */
+    color: #fff; /* White text */
+    cursor: default;
+}
+
+/* Style the info section */
+.info {
+    margin-top: 20px;
+}
+
+/* Style the restart button */
+#restart-button {
+    padding: 10px 20px;
+    background-color: #ff4081; /* Pink background */
+    color: #fff; /* White text */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Style the winning message */
+.win-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: green;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000; /* Ensure it appears on top */
+}
+
+/* Style for the confetti effect */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999; /* Just below the win message */
+}
